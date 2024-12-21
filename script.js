@@ -53,8 +53,10 @@ btnHold.addEventListener('click', function () {
     // scores[1] = scores[1] + currentScore
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer];
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= 10) {
       playing = false;
+      diceEl.classList.add('hidden');
+
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.add('player--winner');
@@ -65,4 +67,8 @@ btnHold.addEventListener('click', function () {
       switchPlayer();
     }
   }
+});
+
+btnRed0.addEventListener('click', function () {
+  document.querySelector('.red0').style.backgroundColor = 'red';
 });
